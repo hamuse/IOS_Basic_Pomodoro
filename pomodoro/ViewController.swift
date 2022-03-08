@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var datePickerView: UIDatePicker!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var toggleButton: UIButton!
+    @IBOutlet weak var imageView: UIImageView!
     
     var duration = 60
     var timerStatus: TimerStatus = .end //타이머의 상태
@@ -53,7 +54,13 @@ class ViewController: UIViewController {
                 let secondes = (self.currentSeconds % 3600) % 60
                 self.timerLabel.text = String(format: "%02d:%02d:%02d", hour, minutes, secondes)
                 self.progressView.progress = Float(self.currentSeconds) / Float(self.duration)
-                debugPrint(self.progressView.progress)
+                UIView.animate(withDuration: 0.5, delay: 0, animations: {
+                    self.imageView.transform = CGAffineTransform(rotationAngle: .pi)
+                })
+                
+                UIView.animate(withDuration: 0.5, delay: 0.5, animations: {
+                    self.imageView.transform = CGAffineTransform(rotationAngle: .pi * 2)
+                })
                 
                 if self.currentSeconds <= 0 {
                     // 타이머 종료
@@ -73,8 +80,14 @@ class ViewController: UIViewController {
         
         self.timerStatus = .end
         self.cancelButton.isEnabled = false
-        self.setTimerInfoViewVisble(isHidden: true)
-        self.datePickerView.isHidden = false
+        UIView.animate(withDuration: 0.5, animations: {
+            self.timerLabel.alpha = 0
+            self.progressView.alpha = 0
+            self.datePickerView.alpha = 1
+            self.imageView.transform = .identity
+        })
+//        self.setTimerInfoViewVisble(isHidden: true)
+//        self.datePickerView.isHidden = false
         self.toggleButton.isSelected = false
         self.timer?.cancel()
         self.timer = nil //타이머를 정지 시킬때는 꼭 nil을 써서 정지 시켜 줘야한다. 그렇지 않으면 타이머가 계속 동작 할수가 있다.
@@ -96,8 +109,13 @@ class ViewController: UIViewController {
         case .end:
             self.currentSeconds = self.duration
             self.timerStatus = .start
-            self.setTimerInfoViewVisble(isHidden: false)
-            self.datePickerView.isHidden = true
+            UIView.animate(withDuration: 0.5) {
+                self.timerLabel.alpha = 1
+                self.progressView.alpha = 1
+                self.datePickerView.alpha = 0
+            }
+//            self.setTimerInfoViewVisble(isHidden: false)
+//            self.datePickerView.isHidden = true
             self.toggleButton.isSelected = true
             self.cancelButton.isEnabled = true
             self.startTimer()
