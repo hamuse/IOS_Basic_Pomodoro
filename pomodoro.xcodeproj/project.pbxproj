@@ -13,6 +13,7 @@
 		531861AD27D5F10E00378B78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 531861AB27D5F10E00378B78 /* Main.storyboard */; };
 		531861AF27D5F10F00378B78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 531861AE27D5F10F00378B78 /* Assets.xcassets */; };
 		531861B227D5F10F00378B78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 531861B027D5F10F00378B78 /* LaunchScreen.storyboard */; };
+		53D9889527DF1E4100786106 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D9889427DF1E4100786106 /* WeatherViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		531861AE27D5F10F00378B78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		531861B127D5F10F00378B78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		531861B327D5F10F00378B78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53D9889427DF1E4100786106 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				531861AE27D5F10F00378B78 /* Assets.xcassets */,
 				531861B027D5F10F00378B78 /* LaunchScreen.storyboard */,
 				531861B327D5F10F00378B78 /* Info.plist */,
+				53D9889427DF1E4100786106 /* WeatherViewController.swift */,
 			);
 			path = pomodoro;
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				531861AA27D5F10E00378B78 /* ViewController.swift in Sources */,
+				53D9889527DF1E4100786106 /* WeatherViewController.swift in Sources */,
 				531861A627D5F10E00378B78 /* AppDelegate.swift in Sources */,
 				531861A827D5F10E00378B78 /* SceneDelegate.swift in Sources */,
 			);

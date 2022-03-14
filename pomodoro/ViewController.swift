@@ -116,6 +116,7 @@ class ViewController: UIViewController {
             }
 //            self.setTimerInfoViewVisble(isHidden: false)
 //            self.datePickerView.isHidden = true
+            
             self.toggleButton.isSelected = true
             self.cancelButton.isEnabled = true
             self.startTimer()
@@ -131,7 +132,9 @@ class ViewController: UIViewController {
             self.timer?.resume()
             
         }
+        
     }
+    
     
 }
 

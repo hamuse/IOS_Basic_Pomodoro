@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VNT-Ky-AIk">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,26 +18,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pomodoro" translatesAutoresizingMaskIntoConstraints="NO" id="lsT-fp-fNb">
-                                <rect key="frame" x="137.5" y="24" width="100" height="100"/>
+                                <rect key="frame" x="137.5" y="68" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="sO4-eQ-Vib"/>
                                     <constraint firstAttribute="height" constant="100" id="soH-nH-pgT"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6UW-MT-fmx">
-                                <rect key="frame" x="24" y="204" width="327" height="60"/>
+                                <rect key="frame" x="24" y="248" width="327" height="60"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <progressView opaque="NO" alpha="0.0" contentMode="scaleToFill" verticalHuggingPriority="750" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="qGM-lh-eL6">
-                                <rect key="frame" x="48" y="294" width="279" height="4"/>
+                                <rect key="frame" x="48" y="338" width="279" height="4"/>
                             </progressView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" style="wheels" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAK-Qi-LuJ">
-                                <rect key="frame" x="0.0" y="154" width="375" height="216"/>
+                                <rect key="frame" x="0.0" y="198" width="375" height="216"/>
                             </datePicker>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="VMO-dD-wCQ">
-                                <rect key="frame" x="24" y="394" width="327" height="31"/>
+                                <rect key="frame" x="24" y="438" width="327" height="31"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R2A-e1-uXm">
                                         <rect key="frame" x="0.0" y="0.0" width="123.5" height="31"/>
@@ -76,6 +77,7 @@
                             <constraint firstItem="6UW-MT-fmx" firstAttribute="top" secondItem="lsT-fp-fNb" secondAttribute="bottom" constant="80" id="zsA-K8-5Po"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="0sm-zl-OYq"/>
                     <connections>
                         <outlet property="cancelButton" destination="R2A-e1-uXm" id="QeE-ke-oFR"/>
                         <outlet property="datePickerView" destination="rAK-Qi-LuJ" id="MTj-RX-7Ko"/>
@@ -89,8 +91,83 @@
             </objects>
             <point key="canvasLocation" x="139" y="129"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="KAm-Eg-BZv">
+            <objects>
+                <tabBarController id="VNT-Ky-AIk" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jP9-2z-loY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="wMn-He-lyr" kind="relationship" relationship="viewControllers" id="fFq-45-ykf"/>
+                        <segue destination="jWI-8Z-Ymt" kind="relationship" relationship="viewControllers" id="eq4-fq-M5q"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7pQ-jp-OFw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1458" y="138"/>
+        </scene>
+        <!--Pomodoro-->
+        <scene sceneID="heM-Yn-WEe">
+            <objects>
+                <navigationController id="wMn-He-lyr" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Pomodoro" image="clock" catalog="system" selectedImage="clock.fill" id="xjD-Ln-z80"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Y6C-ga-8qb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="MZm-YT-EZV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gLw-xf-zUg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-695" y="128"/>
+        </scene>
+        <!--날씨-->
+        <scene sceneID="Xfj-uF-Hmy">
+            <objects>
+                <navigationController id="jWI-8Z-Ymt" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="날씨" image="icloud" catalog="system" selectedImage="icloud.fill" id="lcC-nt-Wbr"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eSf-i6-LbU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="au5-1Y-wLX" kind="relationship" relationship="rootViewController" id="tqJ-d5-QYI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RXY-qy-BIt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-686" y="872"/>
+        </scene>
+        <!--Weather View Controller-->
+        <scene sceneID="sui-7a-ZaB">
+            <objects>
+                <viewController storyboardIdentifier="WeatherViewController" id="au5-1Y-wLX" customClass="WeatherViewController" customModule="pomodoro" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qNv-IB-U2u">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="fwk-1d-bEP"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="wbg-MS-Esw"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZtP-sz-QES" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="95" y="871"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="clock" catalog="system" width="128" height="121"/>
+        <image name="clock.fill" catalog="system" width="128" height="121"/>
+        <image name="icloud" catalog="system" width="128" height="88"/>
+        <image name="icloud.fill" catalog="system" width="128" height="88"/>
         <image name="pomodoro" width="32" height="32"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
